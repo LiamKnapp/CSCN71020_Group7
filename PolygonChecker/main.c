@@ -19,6 +19,11 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
+			if (triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2] == 0) { // check to see if each input is a valid number
+				continueProgram = false;  // if not stop the program
+				printf_s("Inputted values do not form a triangle!\n");
+				break;
+			}
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
