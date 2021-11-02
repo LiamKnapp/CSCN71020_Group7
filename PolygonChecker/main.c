@@ -19,11 +19,7 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			if (triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2] == 0) { // check to see if each input is a valid number
-				continueProgram = false;  // if not stop the program
-				printf_s("Inputted values do not form a triangle!\n");
-				break;
-			}
+			break;
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
@@ -90,7 +86,11 @@ int* getTriangleSides(int* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
 	{
-		scanf_s("%d", &triangleSides[i]);
+		while (scanf_s("%d", &triangleSides[i])==0) { // Checks to see if input is valid on triangle side lengths
+			printf("\nInvalid input. Please enter a number, such as 2, 10, or 5: ");
+			scanf_s("%*s", &triangleSides[i]); // Ignore the last input and scan the new input
+		}
+		
 	}
 	return triangleSides;
 }
@@ -104,7 +104,10 @@ int* getRectanglePoints(int* rectanglePoints)
 		printf_s("Enter the x and y coordinates of point #%d:", i + 1);
 		for (int x = 0; x < 2; x++)
 		{
-			scanf_s("%d", &insertPoints[x]);
+			while (scanf_s("%d", &insertPoints[x]) == 0) { // Checks to see if input is valid on triangle side lengths
+				printf("\nInvalid input. Please enter a number, such as 2, 1, or 3: ");
+				scanf_s("%*s", &insertPoints[i]); // Ignore the last input and scan the new input
+			}
 		}
 		pointLocation = i * 2;
 		rectanglePoints[pointLocation] = insertPoints[0];
