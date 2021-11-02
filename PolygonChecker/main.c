@@ -31,6 +31,32 @@ int main() {
 		case 0:
 			continueProgram = false;
 			break;
+		case 2:
+			printf_s("Rectangle Selected.\n");
+			int fourPoints[8] = { 0,0,0,0,0,0,0,0 };
+			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
+			for (int i = 0; i < 8; i++)
+			{
+				printf_s("%d", fourPoints[i]);
+			}
+			int pointOne[2] = {0, 0};
+			pointOne[0] = fourPoints[0];
+			pointOne[1] = fourPoints[1];
+
+			int pointTwo[2] = { 0, 0 };
+			pointTwo[0] = fourPoints[2];
+			pointTwo[1] = fourPoints[3];
+
+			int pointThree[2] = { 0, 0 };
+			pointThree[0] = fourPoints[4];
+			pointThree[1] = fourPoints[5];
+
+			int pointFour[2] = { 0, 0 };
+			pointFour[0] = fourPoints[6];
+			pointFour[1] = fourPoints[7];
+
+
+			break;
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
@@ -49,6 +75,7 @@ void printWelcome() {
 
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
+	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
@@ -66,4 +93,22 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+
+int* getRectanglePoints(int* rectanglePoints)
+{
+	int insertPoints[2] = { 0,0 };
+	int pointLocation;
+	for (int i = 0; i < 4; i++)
+	{
+		printf_s("Enter the x and y coordinates of point #%d:", i + 1);
+		for (int x = 0; x < 2; x++)
+		{
+			scanf_s("%d", &insertPoints[x]);
+		}
+		pointLocation = i * 2;
+		rectanglePoints[pointLocation] = insertPoints[0];
+		rectanglePoints[pointLocation + 1] = insertPoints[1];
+	}
+	return rectanglePoints;
 }
