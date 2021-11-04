@@ -26,7 +26,7 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result;
 }
 
-void angleCalculator(int* triangleSides)		// a, b and c used to make the formula easy to read
+void angleCalculatorTriangle(int* triangleSides)		// a, b and c used to make the formula easy to read
 {
 	double angleInRad = 0;
 	double angleAInDeg = 0;

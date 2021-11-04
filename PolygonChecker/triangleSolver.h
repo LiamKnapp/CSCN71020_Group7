@@ -1,3 +1,3 @@
 #pragma once
 char* analyzeTriangle(int side1, int side2, int side3);
-void angleCalculator(int* triangleSides);
+void angleCalculatorTriangle(int* triangleSides);
