@@ -5,6 +5,8 @@
 #include "triangleSolver.h"
 
 #define RAD_TO_DEG 57.2957795
+#define DEGREEMAKEUP 1
+
 
 char* analyzeTriangle(int side1, int side2, int side3) {
 	char* result = "";
@@ -28,7 +30,7 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 
 void angleCalculatorTriangle(int* triangleSides)		// a, b and c used to make the formula easy to read
 {
-	double angleInRad = 0;
+	double angleInRad  = 0;
 	double angleAInDeg = 0;
 	double angleBInDeg = 0;
 	double angleCInDeg = 0;
@@ -45,9 +47,15 @@ void angleCalculatorTriangle(int* triangleSides)		// a, b and c used to make the
 	angleInRad = acos(((b * b) + (a * a) - (c * c)) / (2 * b * a)); // Solve for angle C
 	angleCInDeg = angleInRad * RAD_TO_DEG;
 
-	if ((angleAInDeg + angleBInDeg + angleCInDeg) == 180) 
+	int angleA = angleAInDeg, angleB = angleBInDeg, angleC = angleCInDeg;
+
+	int angleResult = angleA + angleB + angleC + 1;
+
+	printf("%d\n%d\n%d\n%d\n", angleA, angleB, angleC, angleResult);
+	if (angleResult == 180) 
 	{
 		printf("%f\n%f\n%f\n", angleAInDeg, angleBInDeg, angleCInDeg);
+		printf("Angles do make a triangle\n");
 	}
 	else
 	{
