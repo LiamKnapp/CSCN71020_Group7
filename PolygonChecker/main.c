@@ -104,7 +104,7 @@ int* getRectanglePoints(int* rectanglePoints)
 		printf_s("Enter the x and y coordinates of point #%d:", i + 1);
 		for (int x = 0; x < 2; x++)
 		{
-			while (scanf_s("%d", &insertPoints[x]) == 0) { // Checks to see if input is valid on triangle side lengths
+			while (scanf_s("%d", &insertPoints[x]) == 0) { // Checks to see if input is valid on rectangle side lengths
 				printf("\nInvalid input. Please enter a number, such as 2, 1, or 3: ");
 				scanf_s("%*s", &insertPoints[i]); // Ignore the last input and scan the new input
 			}
