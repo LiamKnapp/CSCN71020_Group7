@@ -15,22 +15,33 @@ int main() {
 
 		switch (shapeChoice)
 		{
-		case 1:
-			printf_s("Triangle selected.\n");
-			int triangleSides[3] = { 0, 0, 0 };
-			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			break;
-			//printf_s("! %d\n", triangleSidesPtr[0]);
-			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s\n", result);
-			break;
 		case 0:
 			continueProgram = false;
 			break;
+
+		case 1:
+
+			printf_s("Triangle selected.\n");
+
+			int triangleSides[3] = { 0, 0, 0 };
+			int* triangleSidesPtr = getTriangleSides(triangleSides);
+
+			//printf_s("! %d\n", triangleSidesPtr[0]);
+
+			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			printf_s("%s\n", result);
+
+			angleCalculator(triangleSides);
+
+
+			break;
+
 		case 2:
+
 			printf_s("Rectangle Selected.\n");
 			int fourPoints[8] = { 0,0,0,0,0,0,0,0 };
 			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
+
 			for (int i = 0; i < 8; i++)
 			{
 				printf_s("%d", fourPoints[i]);
@@ -50,18 +61,19 @@ int main() {
 			int pointFour[2] = { 0, 0 };
 			pointFour[0] = fourPoints[6];
 			pointFour[1] = fourPoints[7];
-
-
 			break;
+
 		default:
 			printf_s("Invalid value entered.\n");
 			break;
+
 		}
 	}
 	return 0;
 }
 
-void printWelcome() {
+void printWelcome() 
+{
 	printf_s("\n");
 	printf_s(" **********************\n");
 	printf_s("**     Welcome to     **\n");
@@ -69,7 +81,8 @@ void printWelcome() {
 	printf_s(" **********************\n");
 }
 
-int printShapeMenu() {
+int printShapeMenu() 
+{
 	printf_s("1. Triangle\n");
 	printf_s("2. Rectangle\n");
 	printf_s("0. Exit\n");
@@ -82,13 +95,15 @@ int printShapeMenu() {
 	return shapeChoice;
 }
 
-int* getTriangleSides(int* triangleSides) {
+int* getTriangleSides(int* triangleSides) 
+{
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
 	{
-		while (scanf_s("%d", &triangleSides[i])==0) { // Checks to see if input is valid on triangle side lengths
+		while (scanf_s("%d", &triangleSides[i])==0) // Checks to see if input is valid on triangle side lengths
+		{ 
 			printf("\nInvalid input. Please enter a number, such as 2, 10, or 5: ");
-			scanf_s("%*s", &triangleSides[i]); // Ignore the last input and scan the new input
+			scanf_s("%d", &triangleSides[i]); // Ignore the last input and scan the new input
 		}
 		
 	}
@@ -104,9 +119,10 @@ int* getRectanglePoints(int* rectanglePoints)
 		printf_s("Enter the x and y coordinates of point #%d:", i + 1);
 		for (int x = 0; x < 2; x++)
 		{
-			while (scanf_s("%d", &insertPoints[x]) == 0) { // Checks to see if input is valid on rectangle side lengths
+			while (scanf_s("%d", &insertPoints[x]) == 0) // Checks to see if input is valid on triangle side lengths
+			{ 
 				printf("\nInvalid input. Please enter a number, such as 2, 1, or 3: ");
-				scanf_s("%*s", &insertPoints[i]); // Ignore the last input and scan the new input
+				scanf_s("%d", &insertPoints[i]); // Ignore the last input and scan the new input
 			}
 		}
 		pointLocation = i * 2;
