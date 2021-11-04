@@ -13,12 +13,30 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace TextingPolygons
 {
-	TEST_CLASS(TextingPolygons)
+	TEST_CLASS(TestingPolygons)
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestTriangleSides)
 		{
+
+
 		}
+		TEST_METHOD(TestRectangleSides)
+		{
+
+
+		}
+		TEST_METHOD(TestAngleCalculator)
+		{
+
+
+		}
+		TEST_METHOD(TestAnalyzeTriangle)
+		{
+
+
+		}
+
 	};
 }
