@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "triangleSolver.h"
+#include "rectangleSolver.h"
 
 int side = 0;
 
@@ -42,10 +43,6 @@ int main() {
 			int fourPoints[8] = { 0,0,0,0,0,0,0,0 };
 			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
 
-			for (int i = 0; i < 8; i++)
-			{
-				printf_s("%d", fourPoints[i]);
-			}
 			int pointOne[2] = {0, 0};
 			pointOne[0] = fourPoints[0];
 			pointOne[1] = fourPoints[1];
@@ -61,6 +58,14 @@ int main() {
 			int pointFour[2] = { 0, 0 };
 			pointFour[0] = fourPoints[6];
 			pointFour[1] = fourPoints[7];
+
+			float perimeter = 0;
+			perimeter = getRectangleSides(pointOne, pointTwo, pointThree, pointFour);
+
+			printf("\n the perimeter is: %f", perimeter);
+
+			
+
 			break;
 
 		default:
