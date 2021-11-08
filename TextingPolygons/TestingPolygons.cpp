@@ -4,7 +4,7 @@
 extern "C" { // call functions from main.c, rectangleSolver.c and triangleSolver.c
 	int* getRectanglePoints(int* rectanglePoints);
 	int* getTriangleSides(int* triangleSides);
-	void angleCalculatorTriangle(int* triangleSides);
+	int angleCalculatorTriangle(int* triangleSides);
 	char*analyzeTriangle(int side1, int side2, int side3);
 }
 
@@ -53,14 +53,12 @@ namespace TextingPolygons
 		{
 			// testing to make sure the input is valid and it returns the angle
 			int* trianglesides[3];
-			int Result;
+			int Result[4] = { 0, 0, 0, 0 };
 			*trianglesides[0] = 3;
 			*trianglesides[1] = 3;
 			*trianglesides[2] = 3;
-			Result = angleCalculatorTriangle(*trianglesides);
-			Assert::AreEqual(TRIINNERANGLE, Result);
-
-
+			Result[0] = angleCalculatorTriangle(*trianglesides);
+			Assert::AreEqual(TRIINNERANGLE, Result[0]);
 		}
 		TEST_METHOD(Test4Points)
 		{
