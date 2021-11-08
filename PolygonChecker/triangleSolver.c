@@ -49,8 +49,11 @@ void angleCalculatorTriangle(int* triangleSides)		// a, b and c used to make the
 
 	angleResult = round(angleAInDeg + angleBInDeg + angleCInDeg, 0);		// Rounding to make it equal to exactly 180 so it can be checked in the if statement
 
-	if (angleResult == VALID_TRIANGLE)	
+	if (angleResult == VALID_TRIANGLE) {
 		printf("Angles of this triangle are: %f\n%f\n%f\n", angleAInDeg, angleBInDeg, angleCInDeg);		// Print the angles if they add to 180
-	else
+		return angleResult;
+	}
+	else {
 		printf("Angles do not create a triangle\n");		// Print this if the angles do not equal 180
+	}
 }
