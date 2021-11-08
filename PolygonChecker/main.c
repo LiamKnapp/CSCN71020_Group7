@@ -61,6 +61,12 @@ int main() {
 			int pointFour[2] = { 0, 0 };
 			pointFour[0] = fourPoints[6];
 			pointFour[1] = fourPoints[7];
+
+			int oneTotwo = sqrt((fourPoints[2] - fourPoints[0]) ^ 2 + (fourPoints[3] - fourPoints[1]) ^ 2);
+			int oneTothree = sqrt((fourPoints[4] - fourPoints[0]) ^ 2 + (fourPoints[5] - fourPoints[1]) ^ 2);
+			int twoTofour = sqrt((fourPoints[6] - fourPoints[2]) ^ 2 + (fourPoints[7] - fourPoints[3]) ^ 2);
+			int threeTofour = sqrt((fourPoints[6] - fourPoints[4]) ^ 2 + (fourPoints[7] - fourPoints[5]) ^ 2);
+
 			break;
 
 		default:
