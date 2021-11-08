@@ -16,30 +16,19 @@ namespace TextingPolygons
 	TEST_CLASS(TestingPolygons)
 	{
 	public:
-		
-		TEST_METHOD(TestTriangleSides)
+		TEST_METHOD(TestAnalyzeTriangle)
 		{
-			// testing to make sure the input is valid and it returns the sides
-
-		}
-		TEST_METHOD(TestRectangleSides)
-		{
-			// testing to make sure the input is valid and it returns the sides
+			//testing to make sure the triangle is outpuuted as being right angles, scalean...
 
 		}
 		TEST_METHOD(TestAngleCalculatorTriangle)
 		{
-			// testing to make sure the input is valid and it returns the sides
+			// testing to make sure the input is valid and it returns the angle
 
 		}
-		TEST_METHOD(TestAnalyzeTriangle)
+		TEST_METHOD(Test4Points)
 		{
-
-
-		}
-		TEST_METHOD(TestAngleCalculatorRectangle)
-		{
-
+			// test to make sure the code accepts 4 points 
 
 		}
 
