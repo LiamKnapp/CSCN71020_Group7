@@ -26,15 +26,14 @@ int main() {
 
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
+			double angle = 0;
 
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 
-			printf("%f\n", angleCalculatorTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]));
-			printf("%f\n", angleCalculatorTriangle(triangleSidesPtr[1], triangleSidesPtr[0], triangleSidesPtr[2]));
-			printf("%f\n", angleCalculatorTriangle(triangleSidesPtr[2], triangleSidesPtr[1], triangleSidesPtr[0]));
+			angleCalculatorTriangle(triangleSides);
 
 			break;
 
