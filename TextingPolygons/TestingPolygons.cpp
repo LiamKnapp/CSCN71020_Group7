@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-
+#define TRIINNERANGLE 180
 extern "C" { // call functions from main.c, rectangleSolver.c and triangleSolver.c
 	int* getRectanglePoints(int* rectanglePoints);
 	int* getTriangleSides(int* triangleSides);
@@ -16,30 +16,55 @@ namespace TextingPolygons
 	TEST_CLASS(TestingPolygons)
 	{
 	public:
-		
-		TEST_METHOD(TestTriangleSides)
+		TEST_METHOD(TestScaleneTriangle)
 		{
-			// testing to make sure the input is valid and it returns the sides
-
+			//testing to make sure the triangle is outputed as being Scalene
+			int side1, side2, side3;
+			char* Result = " ";
+			side1 = 4;
+			side2 = 6; 
+			side3 = 3;
+			Result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual("Scalene triangle", Result);
 		}
-		TEST_METHOD(TestRectangleSides)
+		TEST_METHOD(TestEqualTriangle)
 		{
-			// testing to make sure the input is valid and it returns the sides
-
+			//testing to make sure the triangle is outputed as being Equal
+			int side1, side2, side3;
+			char* Result = " ";
+			side1 = 3;
+			side2 = 3;
+			side3 = 3;
+			Result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual("Equilateral triangle", Result);
+		}
+		TEST_METHOD(TestIsoscelesTriangle)
+		{
+			//testing to make sure the triangle is outputed as being Isosceles
+			int side1, side2, side3;
+			char* Result = " ";
+			side1 = 3;
+			side2 = 3;
+			side3 = 4;
+			Result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual("Isosceles triangle", Result);
 		}
 		TEST_METHOD(TestAngleCalculatorTriangle)
 		{
-			// testing to make sure the input is valid and it returns the sides
+			// testing to make sure the input is valid and it returns the angle
+			int* trianglesides[3];
+			int Result;
+			*trianglesides[0] = 3;
+			*trianglesides[1] = 3;
+			*trianglesides[2] = 3;
+			Result = angleCalculatorTriangle(*trianglesides);
+			Assert::AreEqual(TRIINNERANGLE, Result);
+
 
 		}
-		TEST_METHOD(TestAnalyzeTriangle)
+		TEST_METHOD(Test4Points)
 		{
-
-
-		}
-		TEST_METHOD(TestAngleCalculatorRectangle)
-		{
-
+			// test to make sure the code accepts 4 points 
 
 		}
 
