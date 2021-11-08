@@ -62,6 +62,7 @@ int main() {
 			int pointFour[2] = { 0, 0 };
 			pointFour[0] = fourPoints[6];
 			pointFour[1] = fourPoints[7];
+
 			break;
 
 		default:

@@ -63,5 +63,3 @@ double angleCalculatorTriangle(int a, int b, int c)
 	angleInRad = acos(value);
 	angleInDeg = angleInRad * RAD_TO_DEG;
 
-	return angleInDeg;
-}
