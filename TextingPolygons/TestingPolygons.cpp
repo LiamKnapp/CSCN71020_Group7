@@ -5,7 +5,7 @@ extern "C" { // call functions from main.c, rectangleSolver.c and triangleSolver
 	int* getRectanglePoints(int* rectanglePoints);
 	int* getTriangleSides(int* triangleSides);
 	int angleCalculatorTriangle(int* triangleSides);
-	char*analyzeTriangle(int side1, int side2, int side3);
+	char* analyzeTriangle(int side1, int side2, int side3);
 }
 
 
