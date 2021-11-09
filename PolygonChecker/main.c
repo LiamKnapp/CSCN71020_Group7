@@ -39,6 +39,7 @@ int main() {
 			printf("%.3f\n", angleCalculatorTriangle(triangleSides2));
 			printf("%.3f\n", angleCalculatorTriangle(triangleSides3));
 
+			angleCalculatorTriangle180(triangleSides);
 			break;
 
 		case 2:
@@ -116,6 +117,7 @@ int* getTriangleSides(int* triangleSides)
 		}
 		
 	}
+
 	return triangleSides;
 }
 
