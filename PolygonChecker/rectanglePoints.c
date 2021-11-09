@@ -19,7 +19,7 @@ int* getRectanglePoints(int* rectanglePoints)
 
 		}
 		pointLocation = i * 2;
-		rectanglePoints[pointLocation] = insertPoints[0];
+		rectanglePoints[pointLocation] = insertPoints[0];     //puts all of the axsis into one array
 		rectanglePoints[pointLocation + 1] = insertPoints[1];
 
 	}
@@ -29,7 +29,7 @@ int* getRectanglePoints(int* rectanglePoints)
 void swap(int* firstNum, int* secondsNum)
 {
 	int temp = *firstNum;
-	*firstNum = *secondsNum;
+	*firstNum = *secondsNum;			//a swap function so the 2 varibles can be swapped
 	*secondsNum = temp;
 }
 
@@ -37,25 +37,24 @@ void orderRectanglePoints(int* order)
 {
 	int pointOrder;
 	int smallest;
-	int smallestPair;
 	int j;
 	for (pointOrder = 0; pointOrder < 8; pointOrder += 2)
 	{
 		smallest = pointOrder;
-		for (j = pointOrder + 2; j < 8; j += 2)
+		for (j = pointOrder + 2; j < 8; j += 2)		//finds the smallest x value of the unsorted section of the array
 		{
-			if (order[j] < order[smallest])
+			if (order[j] < order[smallest])				
 			{
 				smallest = j;
 			}
 		}
 
-		swap(&order[smallest], &order[pointOrder]);
-		swap(&order[smallest + 1], &order[pointOrder + 1]);
+		swap(&order[smallest], &order[pointOrder]); //swaps the smallest X value of the unsorted section into the correct location
+		swap(&order[smallest + 1], &order[pointOrder + 1]); //swaps the corresponding Y value along with it
 	}
 	if (order[0] == order[2])
 	{
-		if (order[1] > order[3])
+		if (order[1] > order[3])		//orders the point correctly incase of a repeated X value in the first 2 axsis'
 		{
 			swap(&order[0], &order[2]);
 			swap(&order[1], &order[3]);
@@ -63,10 +62,10 @@ void orderRectanglePoints(int* order)
 	}
 	if (order[4] == order[6])
 	{
-		if (order[5] < order[7])
+		if (order[5] < order[7]) // orders the points correctly incase of a repeteated X value in the second 2 axsis'
 		{
 			swap(&order[4], &order[6]);
-			swap(&order[5], &order[7]);
+			swap(&order[5], &order[7]);		
 		}
 	}
 }

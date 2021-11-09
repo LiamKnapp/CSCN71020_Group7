@@ -50,8 +50,6 @@ int main() {
 			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
 
 			orderRectanglePoints(fourPoints);
-			for (int i = 0; i < 8; i += 2)
-				printf("\n %d %d", fourPoints[i], fourPoints[i + 1]);
 			
 			int pointOne[2] = {0, 0};
 			pointOne[0] = fourPoints[0];
