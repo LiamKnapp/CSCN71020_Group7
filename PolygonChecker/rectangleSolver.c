@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include <math.h>
+#include <stdbool.h>
 
 #include"rectangleSolver.h"
 
@@ -11,20 +12,21 @@ float getRectangleSides(int axsisOne[2], int axsisTwo[2], int axsisThree[2], int
 	float sideThree = 0;
 	float sideFour = 0;
 
+
 	float run = axsisTwo[0] - axsisOne[0];
 	float rise = axsisTwo[1] - axsisOne[1];        //uses Pythagorean theorem to find distance from point 1 to point 2
 	sideOne = sqrt(rise * rise + run * run);
 
-	run = axsisThree[0] - axsisTwo[0];
-	rise = axsisThree[1] - axsisTwo[1];				//uses Pythagorean theorem to find distance from point 2 to point 3
+	run = axsisFour[0] - axsisTwo[0];
+	rise = axsisFour[1] - axsisTwo[1];				//uses Pythagorean theorem to find distance from point 2 to point 3
 	sideTwo = sqrt(rise * rise + run * run);
 
-	run = axsisFour[0] - axsisThree[0];
-	rise = axsisFour[1] - axsisThree[1];			//uses Pythagorean theorem to find distance from point 3 to point 4
+	run = axsisThree[0] - axsisFour[0];
+	rise = axsisThree[1] - axsisFour[1];			//uses Pythagorean theorem to find distance from point 3 to point 4
 	sideThree = sqrt(rise * rise + run * run);
 
-	run = axsisFour[0] - axsisOne[0];
-	rise = axsisFour[1] - axsisOne[1];			//uses Pythagorean theorem to find distance from point 4 to point 1
+	run = axsisOne[0] - axsisThree[0];
+	rise = axsisOne[1] - axsisThree[1];			//uses Pythagorean theorem to find distance from point 4 to point 1
 	sideFour = sqrt(rise * rise + run * run);
 
 	//printf("%f, %f, %f, %f\n", sideOne, sideTwo, sideThree, sideFour);
