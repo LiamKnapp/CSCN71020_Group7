@@ -33,7 +33,11 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 
-			angleCalculatorTriangle(triangleSides);
+			int triangleSides2[3] = { triangleSides[1], triangleSides[0], triangleSides[2] };
+			int triangleSides3[3] = { triangleSides[2], triangleSides[0], triangleSides[1] };
+			printf("%.3f\n", angleCalculatorTriangle(triangleSides));
+			printf("%.3f\n", angleCalculatorTriangle(triangleSides2));
+			printf("%.3f\n", angleCalculatorTriangle(triangleSides3));
 
 			break;
 
