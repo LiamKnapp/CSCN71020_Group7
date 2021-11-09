@@ -26,20 +26,20 @@ int main() {
 
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			double angle = 0;
 
+			int triangleSides2[3] = { triangleSides[1], triangleSides[0], triangleSides[2] };		// Makes another array which will pass in the sides in a different order so the function can be called 3 times
+			int triangleSides3[3] = { triangleSides[2], triangleSides[0], triangleSides[1] };
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s\n", result);
 
-			int triangleSides2[3] = { triangleSides[1], triangleSides[0], triangleSides[2] };
-			int triangleSides3[3] = { triangleSides[2], triangleSides[0], triangleSides[1] };
-			printf("%.3f\n", angleCalculatorTriangle(triangleSides));
-			printf("%.3f\n", angleCalculatorTriangle(triangleSides2));
-			printf("%.3f\n", angleCalculatorTriangle(triangleSides3));
+			double angleA = angleCalculatorTriangle(triangleSides);		// Solves for the first angle
+			double angleB = angleCalculatorTriangle(triangleSides2);	// Solves for the second angle
+			double angleC = angleCalculatorTriangle(triangleSides3);	// Solbes for the thrid angle
 
-			angleCalculatorTriangle180(triangleSides);
+			if (angleCalculatorTriangle180(angleA, angleB, angleC) == 180)
+				printf_s("%s\n", result);
+
 			break;
 
 		case 2:

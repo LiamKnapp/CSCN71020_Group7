@@ -27,48 +27,29 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result;
 }
 
-int angleCalculatorTriangle180(int* triangleSides)		// a, b and c used to make the variables match the actual math formula
-{
-	double angleResult = 0;
-	double angleInRad  = 0;
-	double angleAInDeg = 0;
-	double angleBInDeg = 0;
-	double angleCInDeg = 0;
-	double a = triangleSides[0];
-	double b = triangleSides[1];
-	double c = triangleSides[2];
-
-	angleInRad = acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));	// Law of cosine rearranged to solve for angle A
-	angleAInDeg = angleInRad * RAD_TO_DEG;
-
-	angleInRad = acos(((a * a) + (c * c) - (b * b)) / (2 * a * c)); // Solve for angle B
-	angleBInDeg = angleInRad * RAD_TO_DEG;
-
-	angleInRad = acos(((b * b) + (a * a) - (c * c)) / (2 * b * a)); // Solve for angle C
-	angleCInDeg = angleInRad * RAD_TO_DEG;
-
-	angleResult = round(angleAInDeg + angleBInDeg + angleCInDeg, 0);		// Rounding to make it equal to exactly 180 so it can be checked in the if statement
-
-	if (angleResult == VALID_TRIANGLE) {
-		printf("Angles of this triangle are equal to 180");		// Print the angles if they add to 180
-		return 180;
-	}
-	else {
-		printf("Angles do not create a triangle\n");		// Print this if the angles do not equal 180
-	}
-}
-
-double angleCalculatorTriangle(int* triangleSides)
+double angleCalculatorTriangle(int* triangleSides)		
 {
     double angleInRad = 0;
     double angleInDeg = 0;
 	double a = triangleSides[0];
 	double b = triangleSides[1];
 	double c = triangleSides[2];
-	double value = ((b * b) + (c * c) - (a * a)) / (2 * b * c);
+	double value = ((b * b) + (c * c) - (a * a)) / (2 * b * c);			// Law of cosine rearragned to solve for angle A
 
-    angleInRad = acos(value);
-    angleInDeg = angleInRad * RAD_TO_DEG;
+    angleInRad = acos(value);	
+    angleInDeg = angleInRad * RAD_TO_DEG;		// Going from radians to degrees
 
     return angleInDeg;
+}
+
+int angleCalculatorTriangle180(double angleA, double angleB, double angleC)		// a, b and c used to make the variables match the actual math formula
+{
+	int angleResult = round(angleA + angleB + angleC, 0);		// Rounding to make it equal to exactly 180 so it can be checked in the if statement
+
+	if (angleResult == VALID_TRIANGLE)
+		printf("The angles of this triangle are: \n%.3f\n%.3f\n%.3f\n", angleA, angleB, angleC);// Print the angles if they add to 180
+	else
+		printf("These angles do not form a triangle\n");		// Print this if the angles do not equal 180
+
+	return angleResult;
 }
