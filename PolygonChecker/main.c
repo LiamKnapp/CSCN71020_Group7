@@ -45,34 +45,42 @@ int main() {
 
 		case 2:
 
+			
+
 			printf_s("Rectangle Selected.\n");
 			int fourPoints[8] = { 0,0,0,0,0,0,0,0 };
 			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
 
 			orderRectanglePoints(fourPoints);
+			bool countinueRectangle = axsisRepeatCheck(fourPoints); // checks for repeated X and Y axis'
 			
-			int pointOne[2] = {0, 0};
-			pointOne[0] = fourPoints[0];
-			pointOne[1] = fourPoints[1];
+			if (countinueRectangle == true)
+			{
+				int pointOne[2] = { 0, 0 };
+				pointOne[0] = fourPoints[0];
+				pointOne[1] = fourPoints[1];
 
-			int pointTwo[2] = { 0, 0 };
-			pointTwo[0] = fourPoints[2];
-			pointTwo[1] = fourPoints[3];
+				int pointTwo[2] = { 0, 0 };
+				pointTwo[0] = fourPoints[2];
+				pointTwo[1] = fourPoints[3];
 
-			int pointThree[2] = { 0, 0 };
-			pointThree[0] = fourPoints[4];
-			pointThree[1] = fourPoints[5];
+				int pointThree[2] = { 0, 0 };
+				pointThree[0] = fourPoints[4];
+				pointThree[1] = fourPoints[5];
 
-			int pointFour[2] = { 0, 0 };
-			pointFour[0] = fourPoints[6];
-			pointFour[1] = fourPoints[7];
+				int pointFour[2] = { 0, 0 };
+				pointFour[0] = fourPoints[6];
+				pointFour[1] = fourPoints[7];
 
-			float perimeter = 0;
-			perimeter = getRectangleSides(pointOne, pointTwo, pointThree, pointFour);
+				float perimeter = 0;
+				perimeter = getRectangleSides(pointOne, pointTwo, pointThree, pointFour);
 
-			printf("\n the perimeter is: %f", perimeter);
-
-			
+				printf("\n the perimeter is: %f", perimeter);
+			}
+			else
+			{
+				printf("\n*Unable to create a rectangle with the given cordinates*\n");
+			}
 
 			break;
 
