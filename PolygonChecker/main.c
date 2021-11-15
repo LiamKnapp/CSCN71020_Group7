@@ -50,6 +50,7 @@ int main() {
 			printf_s("Rectangle Selected.\n");
 			int fourPoints[8] = { 0,0,0,0,0,0,0,0 };
 			int* rectanglePointsPtr = getRectanglePoints(fourPoints);
+		
 
 			orderRectanglePoints(fourPoints);
 			bool countinueRectangle = axsisRepeatCheck(fourPoints); // checks for repeated X and Y axis'

@@ -69,6 +69,7 @@ void orderRectanglePoints(int* order)
 			swap(&order[5], &order[7]);		
 		}
 	}
+
 }
 
 bool axsisRepeatCheck(int *numbers)
