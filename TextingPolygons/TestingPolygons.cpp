@@ -72,7 +72,7 @@ namespace TextingPolygons
 			Result = checkIfAngle180(angle1, angle2, angle3);
 			Assert::AreEqual(TRIINNERANGLE, Result);
 		}
-		TEST_METHOD(TestTriangleAngle1)
+		TEST_METHOD(TestTriangleAngle)
 		{
 			// testing to make sure the input is valid and it returns the first angle
 
