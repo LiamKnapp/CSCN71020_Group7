@@ -5,6 +5,7 @@ extern "C" { // call functions from main.c, rectangleSolver.c and triangleSolver
 	int* getRectanglePoints(int* rectanglePoints);
 	int* getTriangleSides(int* triangleSides);
 	int angleCalculatorTriangle(int* triangleSides);
+	int checkIfAngle180(double angleA, double angleB, double angleC);
 	char* analyzeTriangle(int side1, int side2, int side3);
 }
 
@@ -60,16 +61,16 @@ namespace TextingPolygons
 			Result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual("Not a triangle", Result);
 		}
-		TEST_METHOD(TestAngleCalculatorTriangle)
+		TEST_METHOD(TestTriangleAngle180)
 		{
 			// testing to make sure the input is valid and it returns the angle
-			int* trianglesides[3];
-			int Result[4] = { 0, 0, 0, 0 };
-			*trianglesides[0] = 3;
-			*trianglesides[1] = 3;
-			*trianglesides[2] = 3;
-			Result[0] = angleCalculatorTriangle(*trianglesides);
-			Assert::AreEqual(TRIINNERANGLE, Result[0]);
+
+			int Result;
+			double angle1 = 60;
+			double angle2 = 60;
+			double angle3 = 60;
+			Result = checkIfAngle180(angle1, angle2, angle3);
+			Assert::AreEqual(TRIINNERANGLE, Result);
 		}
 		TEST_METHOD(Test4Points)
 		{

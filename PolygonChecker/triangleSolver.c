@@ -42,7 +42,7 @@ double angleCalculatorTriangle(int* triangleSides)
     return angleInDeg;
 }
 
-int angleCalculatorTriangle180(double angleA, double angleB, double angleC)		// a, b and c used to make the variables match the actual math formula
+int checkIfAngle180(double angleA, double angleB, double angleC)		// a, b and c used to make the variables match the actual math formula
 {
 	int angleResult = round(angleA + angleB + angleC, 0);		// Rounding to make it equal to exactly 180 so it can be checked in the if statement
 
