@@ -38,7 +38,7 @@ int main() {
 			double angleB = angleCalculatorTriangle(triangleSides2);	// Solves for the second angle
 			double angleC = angleCalculatorTriangle(triangleSides3);	// Solbes for the thrid angle
 
-			if (angleCalculatorTriangle180(angleA, angleB, angleC) == 180)
+			if (angleCalculatorTriangle180(angleA, angleB, angleC) == 180) // if the angles are = to 180 since all trianlge = 180 degrees
 				printf_s("%s\n", result);
 
 			break;

@@ -49,6 +49,17 @@ namespace TextingPolygons
 			Result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual("Isosceles triangle", Result);
 		}
+		TEST_METHOD(TestIsItTriangle)
+		{
+			//testing to make sure the triangle is outputed as being not a triangle given invalid inputs
+			int side1, side2, side3;
+			char* Result = " ";
+			side1 = -3;
+			side2 = 0;
+			side3 = 4;
+			Result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual("Not a triangle", Result);
+		}
 		TEST_METHOD(TestAngleCalculatorTriangle)
 		{
 			// testing to make sure the input is valid and it returns the angle
