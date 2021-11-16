@@ -6,8 +6,6 @@
 #include "rectangleSolver.h"
 #include"rectanglePoints.h"
 
-int side = 0;
-
 int main() {
 	bool continueProgram = true;
 	while (continueProgram) {
@@ -132,8 +130,3 @@ int* getTriangleSides(int* triangleSides)
 
 	return triangleSides;
 }
-
-
-
-
-
