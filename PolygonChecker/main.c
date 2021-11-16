@@ -132,8 +132,3 @@ int* getTriangleSides(int* triangleSides)
 
 	return triangleSides;
 }
-
-
-
-
-

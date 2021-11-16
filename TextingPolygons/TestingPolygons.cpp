@@ -12,7 +12,6 @@ extern "C" { // call functions from main.c, rectangleSolver.c and triangleSolver
 	void orderRectanglePoints(int* order);
 	void swap(int* firstNum, int* secondsNum);
 	float getRectangleSides(int axsisOne[2], int axsisTwo[2], int axsisThree[2], int axsisFour[2]);
-
 }
 
 
@@ -56,12 +55,23 @@ namespace TextingPolygons
 			Result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual("Isosceles triangle", Result);
 		}
-		TEST_METHOD(TestIsItTriangle)
+		TEST_METHOD(TestIsItTriangle1Neg)
 		{
-			//testing to make sure the triangle is outputed as being not a triangle given invalid inputs
+			//testing to make sure the triangle is outputed as being not a triangle given a negative input
 			int side1, side2, side3;
 			char* Result = " ";
 			side1 = -3;
+			side2 = 1;
+			side3 = 4;
+			Result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual("Not a triangle", Result);
+		}
+		TEST_METHOD(TestIsItTriangleZero)
+		{
+			//testing to make sure the triangle is outputed as being not a triangle given a zero as input
+			int side1, side2, side3;
+			char* Result = " ";
+			side1 = 4;
 			side2 = 0;
 			side3 = 4;
 			Result = analyzeTriangle(side1, side2, side3);
